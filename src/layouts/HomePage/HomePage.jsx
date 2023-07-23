@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="home-page">
             <div className="title">PokéRon</div>
             <PokeCard id={randomPokemonId}/>
-            <CoolButton text={'אני אוהב למצוץ'} onClick={onRefreshButtonClick}></CoolButton>
+            <CoolButton text={'Refresh'} onClick={onRefreshButtonClick}></CoolButton>
         </div>
     );
 }
