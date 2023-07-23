@@ -14,9 +14,10 @@ export default function PokeCard({ id = 1 }) {
     const allAssetsLoaded = !isPokemonReqLoading && imgFinishedLoading;
 
     const pokemonId = getUiPokemonId(id);
+    const pokemonBackgroundColor = 'blue';
 
     return (
-        <div className="poke-card">
+        <div className="poke-card" style={{ backgroundColor: pokemonBackgroundColor }}>
             <div style={{ display: allAssetsLoaded ? 'none' : 'block' }}>
                 <Loader />
             </div>
