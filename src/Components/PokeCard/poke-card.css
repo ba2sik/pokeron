@@ -1,0 +1,23 @@
+.poke-card {
+    background-color: #004bd5;
+    margin: 1rem;
+    border-radius: 4rem;
+    width: 40rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.pokemon-name {
+    font-size: 4rem;
+    font-weight: bold;
+    color: yellow;
+    text-transform: capitalize;
+}
+
+.pokemon-img {
+    width: 70%;
+}
