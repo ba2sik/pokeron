@@ -22,8 +22,8 @@ export default function PokeCard({ id = 1 }) {
             </div>
             {pokemon && (
                 <div style={{ display: allAssetsLoaded ? 'block' : 'none' }}>
-                    <div className="pokemon-name">{pokemon.name}</div>
                     <div className="pokemon-id">{pokemonId}</div>
+                    <div className="pokemon-name">{pokemon.name}</div>
                     <img
                         src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`}
                         className="pokemon-img"

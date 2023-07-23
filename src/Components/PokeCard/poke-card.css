@@ -11,6 +11,12 @@
     gap: 4rem;
 }
 
+.pokemon-id {
+    font-size: 8rem;
+    opacity: 0.5;
+    font-family: fantasy;
+}
+
 .pokemon-name {
     font-size: 4rem;
     font-weight: bold;
