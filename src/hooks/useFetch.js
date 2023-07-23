@@ -1,15 +1,14 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import {sleep} from '../utils/sleep.js';
+import { sleep } from '../utils/sleep.js';
 
 const useFetch = (url, options = {}) => {
-
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        console.log("useFetch");
+        console.log('useFetch');
 
         const fetchData = async () => {
             setIsLoading(true);

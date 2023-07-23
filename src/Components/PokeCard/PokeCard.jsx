@@ -1,9 +1,9 @@
 import './poke-card.css';
 import Loader from '../Loader/Loader.jsx';
 import useFetch from '../../hooks/useFetch.js';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
-export default function PokeCard({id = 1}) {
+export default function PokeCard({ id = 1 }) {
     const [pokemon, isPokemonReqLoading, error] = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const [imgFinishedLoading, setImgFinishedLoading] = useState(false);
 
@@ -15,30 +15,28 @@ export default function PokeCard({id = 1}) {
 
     const pokemonId = getUiPokemonId(id);
 
-
     return (
         <div className="poke-card">
-            <div style={{display: allAssetsLoaded ? 'none' : 'block'}}>
-                <Loader/>
+            <div style={{ display: allAssetsLoaded ? 'none' : 'block' }}>
+                <Loader />
             </div>
-            {pokemon &&
-                <div style={{display: allAssetsLoaded ? 'block' : 'none'}}>
+            {pokemon && (
+                <div style={{ display: allAssetsLoaded ? 'block' : 'none' }}>
                     <div className="pokemon-name">{pokemon.name}</div>
                     <div className="pokemon-id">{pokemonId}</div>
                     <img
                         src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`}
                         className="pokemon-img"
-                        onLoad={() =>
-                            setImgFinishedLoading(true)
-                        }/>
+                        onLoad={() => setImgFinishedLoading(true)}
+                    />
                 </div>
-            }
+            )}
         </div>
     );
 }
 
 function getUiPokemonId(id = 0) {
-    console.log("func")
+    console.log('func');
     const paddedId = id.toString().padStart(3, '0');
     return '#' + paddedId;
 }
