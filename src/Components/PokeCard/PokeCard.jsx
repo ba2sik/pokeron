@@ -2,6 +2,7 @@ import './poke-card.css';
 import Loader from '../Loader/Loader.jsx';
 import useFetch from '../../hooks/useFetch.js';
 import { useEffect, useState } from 'react';
+import { pokemonTypeToColor } from '../../consts/pokemonColors.js';
 
 const POKEMON_API_URL = 'https://pokeapi.co/api/v2/pokemon';
 const POKEMON_SPRITE_URL = 'https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world';
@@ -15,7 +16,7 @@ export default function PokeCard({ id = 1 }) {
     const allAssetsLoaded = !isPokemonReqLoading && imgFinishedLoading;
 
     const pokemonId = getUiPokemonId(id);
-    const pokemonBackgroundColor = 'blue';
+    const pokemonBackgroundColor = pokemonTypeToColor[getPokemonType(pokemon)];
 
     return (
         <div className="poke-card" style={{ backgroundColor: pokemonBackgroundColor }}>
@@ -45,4 +46,8 @@ function getUiPokemonId(id = 0) {
     console.log('func');
     const paddedId = id.toString().padStart(3, '0');
     return '#' + paddedId;
+}
+
+function getPokemonType(pokemon) {
+    return pokemon?.types[0].type.name;
 }
