@@ -15,7 +15,7 @@ export default function PokeCard({ id = 1 }) {
 
     const allAssetsLoaded = !isPokemonReqLoading && imgFinishedLoading;
 
-    const pokemonId = getUiPokemonId(id);
+    const paddedPokemonId = getUiPokemonId(id);
     const pokemonBackgroundColor = pokemonTypeToColor[getPokemonType(pokemon)];
 
     return (
@@ -29,7 +29,7 @@ export default function PokeCard({ id = 1 }) {
             </div>
             {pokemon && (
                 <div style={{ display: allAssetsLoaded ? 'block' : 'none' }}>
-                    <div className="pokemon-id">{pokemonId}</div>
+                    <div className="pokemon-id">{paddedPokemonId}</div>
                     <div className="pokemon-name">{pokemon.name}</div>
                     <img
                         src={`${POKEMON_SPRITE_URL}/${id}.svg`}
