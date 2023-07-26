@@ -1,5 +1,4 @@
 .poke-card {
-    background-color: #004bd5;
     margin: 1rem;
     border-radius: 4rem;
     width: 40rem;
@@ -9,6 +8,7 @@
     justify-content: center;
     align-items: center;
     gap: 4rem;
+    transition: background-color 1000ms linear;
 }
 
 .pokemon-id {

@@ -7,7 +7,7 @@ export const pokemonTypeToColor = {
     ice: 'lightskyblue',
     fighting: 'red',
     poison: 'darkolivegreen',
-    ground: 'brown',
+    ground: 'saddlebrown',
     flying: 'lightskyblue',
     psychic: 'purple',
     bug: 'darkgreen',
