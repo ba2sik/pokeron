@@ -3,8 +3,11 @@ import Loader from '../Loader/Loader.jsx';
 import useFetch from '../../hooks/useFetch.js';
 import { useEffect, useState } from 'react';
 
+const POKEMON_API_URL = 'https://pokeapi.co/api/v2/pokemon';
+const POKEMON_SPRITE_URL = 'https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world';
+
 export default function PokeCard({ id = 1 }) {
-    const [pokemon, isPokemonReqLoading, error] = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const [pokemon, isPokemonReqLoading, error] = useFetch(`${POKEMON_API_URL}/${id}`);
     const [imgFinishedLoading, setImgFinishedLoading] = useState(false);
 
     useEffect(() => setImgFinishedLoading(false), [id]);
@@ -24,7 +27,7 @@ export default function PokeCard({ id = 1 }) {
                     <div className="pokemon-id">{pokemonId}</div>
                     <div className="pokemon-name">{pokemon.name}</div>
                     <img
-                        src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`}
+                        src={`${POKEMON_SPRITE_URL}/${id}.svg`}
                         className="pokemon-img"
                         onLoad={() => setImgFinishedLoading(true)}
                     />
