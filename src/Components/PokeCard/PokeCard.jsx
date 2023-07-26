@@ -19,6 +19,10 @@ export default function PokeCard({ id = 1 }) {
 
     return (
         <div className="poke-card" style={{ backgroundColor: pokemonBackgroundColor }}>
+            {/*
+                We want to show loader while images load, in order to load them have to add them to the DOM first.
+                That's why we use CSS, rather than conditional rendering (As a workaround).
+            */}
             <div style={{ display: allAssetsLoaded ? 'none' : 'block' }}>
                 <Loader />
             </div>
