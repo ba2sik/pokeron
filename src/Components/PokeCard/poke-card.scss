@@ -1,0 +1,33 @@
+.pokemon-id {
+  font-size: 8rem;
+  opacity: 0.5;
+  font-family: fantasy;
+}
+
+.pokemon-name {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.poke-card {
+  background-color: gray;
+  margin: 1rem;
+  border-radius: 4rem;
+  width: 40rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  transition: background-color 1000ms linear;
+
+  .pokemon-id, .pokemon-name, .loader-text {
+    mix-blend-mode: difference;
+  }
+}
+
+.pokemon-img {
+  width: 70%;
+}

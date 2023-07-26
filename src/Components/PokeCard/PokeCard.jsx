@@ -1,4 +1,4 @@
-import './poke-card.css';
+import './poke-card.scss';
 import Loader from '../Loader/Loader.jsx';
 import useFetch from '../../hooks/useFetch.js';
 import { useEffect, useState } from 'react';
