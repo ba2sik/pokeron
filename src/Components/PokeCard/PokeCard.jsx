@@ -7,9 +7,7 @@ export default function PokeCard({ id = 1 }) {
     const [pokemon, isPokemonReqLoading, error] = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const [imgFinishedLoading, setImgFinishedLoading] = useState(false);
 
-    useEffect(() => {
-        setImgFinishedLoading(false);
-    }, [id]);
+    useEffect(() => setImgFinishedLoading(false), [id]);
 
     const allAssetsLoaded = !isPokemonReqLoading && imgFinishedLoading;
 
