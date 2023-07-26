@@ -25,7 +25,7 @@ export default function PokeCard({ id = 1 }) {
                 That's why we use CSS, rather than conditional rendering (As a workaround).
             */}
             <div style={{ display: allAssetsLoaded ? 'none' : 'block' }}>
-                <Loader />
+                <Loader text={"Loading Image..."}/>
             </div>
             {pokemon && (
                 <div style={{ display: allAssetsLoaded ? 'block' : 'none' }}>
